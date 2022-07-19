@@ -5,8 +5,6 @@ Copyright © 2022 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 	"github.com/syoi-org/syoi-access/internal/app"
 )
@@ -22,7 +20,7 @@ var sshCmd = &cobra.Command{
 This command can act as the ProxyCommand in SSH config. You will be prompted to
 login to cloudflare and the SSH connection will be established afterwards.`,
 	Run: func(*cobra.Command, []string) {
-		fmt.Println("ssh called")
+		app.Ssh(&config)
 	},
 }
 
